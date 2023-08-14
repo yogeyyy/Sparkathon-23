@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const db = require("./config/db");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -13,6 +14,7 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 app.use(express.json());
+app.use(cookieParser())
 
 // Define routes
 app.use("/api/users", require("./routes/userRoutes"));

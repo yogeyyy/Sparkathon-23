@@ -30,6 +30,10 @@ const sellerSchema = new mongoose.Schema({
       ref: "Order",
     },
   ],
+  approved :{
+    type: Boolean,
+    default: false
+  }
 });
 
 const Seller = mongoose.model("Seller", sellerSchema);
