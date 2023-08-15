@@ -8,17 +8,21 @@ import reportWebVitals from "./reportWebVitals";
 // // Import your route components here
 import Home from "./components/Home";
 import About from "./components/About";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 // import Products from './components/Products';
 // import Cart from './components/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
+    <Navbar />
     <Routes>
       <Route exact path="/" element={<App />}></Route>
       <Route index element={<Home />} />
       <Route exact path="/about" element={<About />}></Route>
     </Routes>
+    <Footer />
   </Router>
 );
 
