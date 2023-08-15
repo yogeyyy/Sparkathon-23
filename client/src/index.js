@@ -8,8 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 // // Import your route components here
 import Home from "./components/Home";
 import About from "./components/About";
-// import Products from './components/Products';
-// import Cart from './components/Cart';
+import Signup from "./pages/Signup";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +17,7 @@ root.render(
       <Route exact path="/" element={<App />}>
         <Route index element={<Home />} />
         <Route exact path="/about" element={<About />} />
+        <Route exact path="/signup" element={<Signup />} />
       </Route>
     </Routes>
   </Router>
