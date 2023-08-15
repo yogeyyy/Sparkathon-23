@@ -9,8 +9,7 @@ import reportWebVitals from "./reportWebVitals";
 import Home from "./components/Home";
 import About from "./components/About";
 import Signup from "./pages/Signup";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Signin from "./pages/Signin";
 // import Products from './components/Products';
 // import Cart from './components/Cart';
 
@@ -22,7 +21,7 @@ root.render(
         <Route index element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/signup" element={<Signup />} />
-
+        <Route exact path="/signin" element={<Signin />} />
         {/* add routes here -- yogit */}
       </Route>
     </Routes>
