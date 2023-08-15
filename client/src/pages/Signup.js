@@ -49,29 +49,42 @@ function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { firstName, email, password, confirmPassword } = data;
+    const { firstName, lastName, email, password, confirmPassword } = data;
     if (firstName && email && password && confirmPassword) {
       if (password === confirmPassword) {
-        const fetchData = await fetch(
+        try { 
+        const response = await fetch(
           `${process.env.REACT_APP_SERVER_DOMAIN}/users/`,
           {
             method: "POST",
             headers: {
               "content-type": "application/json",
             },
-            body: JSON.stringify(data),
+            body: JSON.stringify({
+              userdp: data.image,
+              useremail: email,
+              userpassword: password,
+              firstName,
+              lastName  
+            }),
+          });
+
+          if (response.ok) {
+            const dataRes = await response.json();
+            toast(dataRes.message);
+            
+            if (dataRes.alert) {
+              navigate("/signin");
+            }
+          } else {
+            toast("Failed to create user");
           }
-        );
-
-        const dataRes = await fetchData.json();
-        // console.log(dataRes);
-
-        toast(dataRes.message);
-        if (dataRes.alert) {
-          navigate("/signin");
+        } catch (error) {
+          console.error(error);
+          toast("An error occurred while creating the user");
         }
       } else {
-        toast("Password and Confirm Password not equal");
+        toast("Password and Confirm Password do not match");
       }
     } else {
       toast("Some fields are empty!");
