@@ -9,6 +9,10 @@ import reportWebVitals from "./reportWebVitals";
 import Home from "./components/Home";
 import About from "./components/About";
 import Signup from "./pages/Signup";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+// import Products from './components/Products';
+// import Cart from './components/Cart';
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -18,6 +22,8 @@ root.render(
         <Route index element={<Home />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/signup" element={<Signup />} />
+
+        {/* add routes here -- yogit */}
       </Route>
     </Routes>
   </Router>

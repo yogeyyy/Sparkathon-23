@@ -78,7 +78,7 @@ function Signup() {
     }
   };
   return (
-    <div className="py-12 sm:py-28 md:py-20 flex justify-center items-center w-full">
+    <div className="py-12 sm:py-28 md:py-28 flex justify-center items-center w-full">
       <div className="bg-white w-11/12 md:w-10/12 lg:w-5/6 2xl:w-1/3 flex flex-row rounded-md shadow-md">
         <div className="w-55p flex flex-col items-center justify-center rounded-md">
           <div className="flex flex-col justify-center items-center md:w-4/5 lg:w-3/5 py-10">          
