@@ -8,6 +8,7 @@ import reportWebVitals from "./reportWebVitals";
 // // Import your route components here
 import Home from "./components/Home";
 import About from "./components/About";
+import Signup from "./pages/Signup";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 // import Products from './components/Products';
@@ -16,13 +17,15 @@ import Footer from "./components/Footer";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Router>
-    <Navbar />
     <Routes>
-      <Route exact path="/" element={<App />}></Route>
-      <Route index element={<Home />} />
-      <Route exact path="/about" element={<About />}></Route>
+      <Route exact path="/" element={<App />}>
+        <Route index element={<Home />} />
+        <Route exact path="/about" element={<About />} />
+        <Route exact path="/signup" element={<Signup />} />
+
+        {/* add routes here -- yogit */}
+      </Route>
     </Routes>
-    <Footer />
   </Router>
 );
 

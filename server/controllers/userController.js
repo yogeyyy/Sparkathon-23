@@ -63,20 +63,20 @@ exports.updateUser = async (req, res) => {
   }
 };
 
-// exports.deleteUser = async (req, res) => {
-//   try {
+exports.deleteUser = async (req, res) => {
+  try {
 
 
 
-//     const deletedUser = await User.findByIdAndDelete(req.params.id);
-//     if (!deletedUser) {
-//       return res.status(404).json({ error: "User not found" });
-//     }
-//     res.json(deletedUser);
-//   } catch (err) {
-//     res.status(400).json({ error: "Failed to delete user" });
-//   }
-// };
+    const deletedUser = await User.findByIdAndDelete(req.params.id);
+    if (!deletedUser) {
+      return res.status(404).json({ error: "User not found" });
+    }
+    res.json(deletedUser);
+  } catch (err) {
+    res.status(400).json({ error: "Failed to delete user" });
+  }
+};
 
 exports.deleteUserAndSeller = async (req, res) => {
   try {
